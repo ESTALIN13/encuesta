@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Encuesta Turística</title>
+</head>
+<body>
+
+    <h1>Encuesta sobre sitios turísticos del Ecuador</h1>
+    <p>Responde las siguientes preguntas sobre tus preferencias turísticas.</p>
+
+    <form>
+
+        <label>1. ¿Cuál es tu nombre?</label>
+        <input type="text" name="nombre">
+        <br><br>
+
+        <label>2. ¿Cuál es tu edad?</label>
+        <input type="number" name="edad">
+        <br><br>
+
+        <label>3. ¿Qué sitio turístico te gustaría visitar?</label>
+        <select name="sitio">
+            <option>Volcán Cotopaxi</option>
+            <option>Laguna del Quilotoa</option>
+            <option>Baños de Agua Santa</option>
+            <option>Mitad del Mundo</option>
+            <option>Islas Galápagos</option>
+        </select>
+        <br><br>
+
+        <label>4. ¿Has visitado el volcán Cotopaxi?</label>
+        <input type="radio" name="visita" value="Si"> Sí
+        <input type="radio" name="visita" value="No"> No
+        <br><br>
+
+        <label>5. ¿Qué transporte utilizarías?</label>
+        <select name="transporte">
+            <option>Vehículo propio</option>
+            <option>Autobús</option>
+            <option>Transporte turístico</option>
+            <option>Bicicleta</option>
+        </select>
+        <br><br>
+
+        <label>6. ¿Con quién visitarías el lugar?</label>
+        <input type="radio" name="compania" value="Familia"> Familia
+        <input type="radio" name="compania" value="Amigos"> Amigos
+        <input type="radio" name="compania" value="Pareja"> Pareja
+        <input type="radio" name="compania" value="Solo"> Solo
+        <br><br>
+
+        <label>7. ¿Qué actividades te gustaría realizar?</label>
+        <br>
+        <input type="checkbox" name="actividad" value="Fotografia"> Fotografía
+        <input type="checkbox" name="actividad" value="Senderismo"> Senderismo
+        <input type="checkbox" name="actividad" value="Camping"> Camping
+        <input type="checkbox" name="actividad" value="Ciclismo"> Ciclismo
+        <br><br>
+
+        <label>8. ¿Cómo calificas la belleza del lugar?</label>
+        <select name="calificacion">
+            <option>Excelente</option>
+            <option>Muy bueno</option>
+            <option>Bueno</option>
+            <option>Regular</option>
+            <option>Malo</option>
+        </select>
+        <br><br>
+
+        <label>9. ¿Cuánto dinero gastarías en la visita?</label>
+        <input type="radio" name="presupuesto" value="Menos de 10"> Menos de $10
+        <input type="radio" name="presupuesto" value="10 a 25"> $10 a $25
+        <input type="radio" name="presupuesto" value="Mas de 25"> Más de $25
+        <br><br>
+
+        <label>10. ¿Qué servicios consideras necesarios?</label>
+        <br>
+        <input type="checkbox" name="servicio" value="Restaurante"> Restaurante
+        <input type="checkbox" name="servicio" value="Banos"> Baños públicos
+        <input type="checkbox" name="servicio" value="Seguridad"> Seguridad
+        <input type="checkbox" name="servicio" value="Guias"> Guías turísticos
+        <br><br>
+
+        <label>11. ¿Qué mejorarías del sitio turístico?</label>
+        <br>
+        <textarea name="mejoras" rows="4" cols="40"></textarea>
+        <br><br>
+
+        <label>12. ¿Qué recomendarías a otros turistas?</label>
+        <br>
+        <textarea name="recomendacion" rows="4" cols="40"></textarea>
+        <br><br>
+
+        <input type="submit" value="Enviar encuesta">
+        <input type="reset" value="Limpiar respuestas">
+
+    </form>
+
+</body>
+</html>
+
