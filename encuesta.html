@@ -1,103 +1,362 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Encuesta Turística</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Turística de Ecuador</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fce7f3);
+            color: #66505c;
+        }
+
+        .contenedor {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 25px;
+            box-shadow: 0 10px 35px rgba(219, 112, 147, 0.15);
+        }
+
+        header {
+            text-align: center;
+            padding: 35px 20px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #ffc4d6, #f9d8ed, #ead7ff);
+        }
+
+        header .icono {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            color: #a83f70;
+            font-size: 29px;
+            margin: 0 0 15px;
+        }
+
+        header p {
+            color: #80566c;
+            line-height: 1.7;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .decoracion {
+            color: #d66b9b;
+            letter-spacing: 5px;
+            margin-top: 15px;
+        }
+
+        .pregunta {
+            background: #fff9fc;
+            border: 1px solid #f8d7e5;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s ease;
+        }
+
+        .pregunta:hover {
+            border-color: #eea6c4;
+            box-shadow: 0 5px 15px rgba(219, 112, 147, 0.10);
+        }
+
+        .pregunta > label {
+            display: block;
+            font-weight: bold;
+            color: #a34472;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #efc6d8;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #66505c;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #df80aa;
+            box-shadow: 0 0 0 3px rgba(223, 128, 170, 0.15);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #b89aaa;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .opciones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+        }
+
+        .opciones label {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #765c6b;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #db76a0;
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+        }
+
+        .botones {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            flex: 1;
+            padding: 15px 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #ed91b5, #d96e9c);
+            color: white;
+            box-shadow: 0 5px 12px rgba(217, 110, 156, 0.2);
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #dc78a1, #c65385);
+            transform: translateY(-2px);
+        }
+
+        input[type="reset"] {
+            background: #f7e5f3;
+            color: #965b85;
+            border: 1px solid #edd1e6;
+        }
+
+        input[type="reset"]:hover {
+            background: #efd2e8;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #f8dce8;
+            color: #b06c91;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .contenedor {
+                padding: 16px;
+                border-radius: 18px;
+            }
+
+            header {
+                padding: 25px 14px;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            .pregunta {
+                padding: 16px;
+            }
+
+            .opciones {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .botones {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Encuesta sobre sitios turísticos del Ecuador</h1>
-    <p>Responde las siguientes preguntas sobre tus preferencias turísticas.</p>
+    <div class="contenedor">
 
-    <form>
+        <header>
+            <div class="icono">🌸</div>
+            <h1>Descubre el Ecuador</h1>
+            <p>
+                Encuesta sobre sitios turísticos del Ecuador.
+                Cuéntanos tus preferencias y ayúdanos a descubrir
+                los lugares más maravillosos de nuestro país.
+            </p>
+            <div class="decoracion">♡ ✿ ♡</div>
+        </header>
 
-        <label>1. ¿Cuál es tu nombre?</label>
-        <input type="text" name="nombre">
-        <br><br>
+        <form>
 
-        <label>2. ¿Cuál es tu edad?</label>
-        <input type="number" name="edad">
-        <br><br>
+            <div class="pregunta">
+                <label for="nombre">1. ¿Cuál es tu nombre?</label>
+                <input type="text" id="nombre" name="nombre"
+                       placeholder="Escribe tu nombre">
+            </div>
 
-        <label>3. ¿Qué sitio turístico te gustaría visitar?</label>
-        <select name="sitio">
-            <option>Volcán Cotopaxi</option>
-            <option>Laguna del Quilotoa</option>
-            <option>Baños de Agua Santa</option>
-            <option>Mitad del Mundo</option>
-            <option>Islas Galápagos</option>
-        </select>
-        <br><br>
+            <div class="pregunta">
+                <label for="edad">2. ¿Cuál es tu edad?</label>
+                <input type="number" id="edad" name="edad"
+                       min="1" max="120" placeholder="Escribe tu edad">
+            </div>
 
-        <label>4. ¿Has visitado el volcán Cotopaxi?</label>
-        <input type="radio" name="visita" value="Si"> Sí
-        <input type="radio" name="visita" value="No"> No
-        <br><br>
+            <div class="pregunta">
+                <label for="sitio">3. ¿Qué sitio turístico te gustaría visitar?</label>
+                <select id="sitio" name="sitio">
+                    <option value="Cotopaxi">Volcán Cotopaxi</option>
+                    <option value="Quilotoa">Laguna del Quilotoa</option>
+                    <option value="Banos">Baños de Agua Santa</option>
+                    <option value="Mitad del Mundo">Mitad del Mundo</option>
+                    <option value="Galapagos">Islas Galápagos</option>
+                </select>
+            </div>
 
-        <label>5. ¿Qué transporte utilizarías?</label>
-        <select name="transporte">
-            <option>Vehículo propio</option>
-            <option>Autobús</option>
-            <option>Transporte turístico</option>
-            <option>Bicicleta</option>
-        </select>
-        <br><br>
+            <div class="pregunta">
+                <label>4. ¿Has visitado el volcán Cotopaxi?</label>
+                <div class="opciones">
+                    <label><input type="radio" name="visita" value="Si"> Sí</label>
+                    <label><input type="radio" name="visita" value="No"> No</label>
+                </div>
+            </div>
 
-        <label>6. ¿Con quién visitarías el lugar?</label>
-        <input type="radio" name="compania" value="Familia"> Familia
-        <input type="radio" name="compania" value="Amigos"> Amigos
-        <input type="radio" name="compania" value="Pareja"> Pareja
-        <input type="radio" name="compania" value="Solo"> Solo
-        <br><br>
+            <div class="pregunta">
+                <label for="transporte">5. ¿Qué transporte utilizarías?</label>
+                <select id="transporte" name="transporte">
+                    <option>Vehículo propio</option>
+                    <option>Autobús</option>
+                    <option>Transporte turístico</option>
+                    <option>Bicicleta</option>
+                </select>
+            </div>
 
-        <label>7. ¿Qué actividades te gustaría realizar?</label>
-        <br>
-        <input type="checkbox" name="actividad" value="Fotografia"> Fotografía
-        <input type="checkbox" name="actividad" value="Senderismo"> Senderismo
-        <input type="checkbox" name="actividad" value="Camping"> Camping
-        <input type="checkbox" name="actividad" value="Ciclismo"> Ciclismo
-        <br><br>
+            <div class="pregunta">
+                <label>6. ¿Con quién visitarías el lugar?</label>
+                <div class="opciones">
+                    <label><input type="radio" name="compania" value="Familia"> Familia</label>
+                    <label><input type="radio" name="compania" value="Amigos"> Amigos</label>
+                    <label><input type="radio" name="compania" value="Pareja"> Pareja</label>
+                    <label><input type="radio" name="compania" value="Solo"> Solo</label>
+                </div>
+            </div>
 
-        <label>8. ¿Cómo calificas la belleza del lugar?</label>
-        <select name="calificacion">
-            <option>Excelente</option>
-            <option>Muy bueno</option>
-            <option>Bueno</option>
-            <option>Regular</option>
-            <option>Malo</option>
-        </select>
-        <br><br>
+            <div class="pregunta">
+                <label>7. ¿Qué actividades te gustaría realizar?</label>
+                <div class="opciones">
+                    <label><input type="checkbox" name="actividad" value="Fotografia"> Fotografía</label>
+                    <label><input type="checkbox" name="actividad" value="Senderismo"> Senderismo</label>
+                    <label><input type="checkbox" name="actividad" value="Camping"> Camping</label>
+                    <label><input type="checkbox" name="actividad" value="Ciclismo"> Ciclismo</label>
+                </div>
+            </div>
 
-        <label>9. ¿Cuánto dinero gastarías en la visita?</label>
-        <input type="radio" name="presupuesto" value="Menos de 10"> Menos de $10
-        <input type="radio" name="presupuesto" value="10 a 25"> $10 a $25
-        <input type="radio" name="presupuesto" value="Mas de 25"> Más de $25
-        <br><br>
+            <div class="pregunta">
+                <label for="calificacion">8. ¿Cómo calificas la belleza del lugar?</label>
+                <select id="calificacion" name="calificacion">
+                    <option>Excelente</option>
+                    <option>Muy bueno</option>
+                    <option>Bueno</option>
+                    <option>Regular</option>
+                    <option>Malo</option>
+                </select>
+            </div>
 
-        <label>10. ¿Qué servicios consideras necesarios?</label>
-        <br>
-        <input type="checkbox" name="servicio" value="Restaurante"> Restaurante
-        <input type="checkbox" name="servicio" value="Banos"> Baños públicos
-        <input type="checkbox" name="servicio" value="Seguridad"> Seguridad
-        <input type="checkbox" name="servicio" value="Guias"> Guías turísticos
-        <br><br>
+            <div class="pregunta">
+                <label>9. ¿Cuánto dinero gastarías en la visita?</label>
+                <div class="opciones">
+                    <label><input type="radio" name="presupuesto" value="Menos de 10"> Menos de $10</label>
+                    <label><input type="radio" name="presupuesto" value="10 a 25"> $10 a $25</label>
+                    <label><input type="radio" name="presupuesto" value="Mas de 25"> Más de $25</label>
+                </div>
+            </div>
 
-        <label>11. ¿Qué mejorarías del sitio turístico?</label>
-        <br>
-        <textarea name="mejoras" rows="4" cols="40"></textarea>
-        <br><br>
+            <div class="pregunta">
+                <label>10. ¿Qué servicios consideras necesarios?</label>
+                <div class="opciones">
+                    <label><input type="checkbox" name="servicio" value="Restaurante"> Restaurante</label>
+                    <label><input type="checkbox" name="servicio" value="Banos"> Baños públicos</label>
+                    <label><input type="checkbox" name="servicio" value="Seguridad"> Seguridad</label>
+                    <label><input type="checkbox" name="servicio" value="Guias"> Guías turísticos</label>
+                </div>
+            </div>
 
-        <label>12. ¿Qué recomendarías a otros turistas?</label>
-        <br>
-        <textarea name="recomendacion" rows="4" cols="40"></textarea>
-        <br><br>
+            <div class="pregunta">
+                <label for="mejoras">11. ¿Qué mejorarías del sitio turístico?</label>
+                <textarea id="mejoras" name="mejoras"
+                          placeholder="Escribe tus ideas aquí..."></textarea>
+            </div>
 
-        <input type="submit" value="Enviar encuesta">
-        <input type="reset" value="Limpiar respuestas">
+            <div class="pregunta">
+                <label for="recomendacion">12. ¿Qué recomendarías a otros turistas?</label>
+                <textarea id="recomendacion" name="recomendacion"
+                          placeholder="Comparte tus recomendaciones..."></textarea>
+            </div>
 
-    </form>
+            <div class="botones">
+                <input type="submit" value="♡ Enviar encuesta">
+                <input type="reset" value="Limpiar respuestas">
+            </div>
+
+        </form>
+
+        <footer>
+            <p>🌷 Gracias por compartir tus ideas.</p>
+            <p>Conoce, disfruta y enamórate del Ecuador. ♡</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
-
+```
